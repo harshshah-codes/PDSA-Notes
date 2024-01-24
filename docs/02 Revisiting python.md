@@ -67,7 +67,7 @@ def opt_gcd(m, n):
   if (a % b == 0):
     return b
   else:
-    return (opt_gcd(a, a % b))
+    return (opt_gcd(b, a % b))
 
 ```
 
