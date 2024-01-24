@@ -2,7 +2,7 @@ site_name: PDSA Notes
 theme:
   name: material
   font: 
-    text: Inter
+    text: Space Grotesk
     code: Anonymous Pro
   palette:
     # Palette toggle for automatic mode
