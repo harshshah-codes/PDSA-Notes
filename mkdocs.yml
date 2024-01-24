@@ -1,6 +1,9 @@
 site_name: PDSA Notes
 theme:
   name: material
+  font: 
+    text: Inter
+    code: Anonymous Pro
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
@@ -25,6 +28,7 @@ theme:
     - content.code.copy
     - content.code.select
     - navigation.footer
+    - navigation.path
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
