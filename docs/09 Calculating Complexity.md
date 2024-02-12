@@ -89,4 +89,4 @@ Tower of Hanoi is a mathematical puzzle where we have three rods (A, B, and C) a
 
 To solve this problem we use a recursive approach. You can learn more about the approach from the [Proffessor's video](https://www.youtube.com/watch?v=L1SPxZvjpoM&t=626s).
 
-<iframe width="1440" height="900" src="https://www.youtube.com/embed/L1SPxZvjpoM" title="W2L3_Calculating Complexity - Examples" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="1080" height="600" src="https://www.youtube.com/embed/L1SPxZvjpoM?start=626" title="W2L3_Calculating Complexity - Examples" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
