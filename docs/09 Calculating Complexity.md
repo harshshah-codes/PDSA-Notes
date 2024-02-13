@@ -89,4 +89,19 @@ Tower of Hanoi is a mathematical puzzle where we have three rods (A, B, and C) a
 
 To solve this problem we use a recursive approach. You can learn more about the approach from the [Proffessor's video](https://www.youtube.com/watch?v=L1SPxZvjpoM&t=626s).
 
+#### Approach
+
+- Let the initial peg be `A`, final peg be `B` and transit peg be `C`.
+- Move $n-1$ discs from from peg `A` to `C`.
+- Then move the last disc from `A` to `B`.
+- Now `C` has $n-1$ discs and `B` has 1 disc.
+- Now move $n-2$ discs from `C` to `A`. And the last disc from `C` to `B` and so on.
+
+$$
+\text{Now let } M(n) - \text{ Number of moves to move }n\text{ discs and }M(1)=1.
+\\\ \\ \text{So, using the recursive approach, }\\\ \\M(n) = M(n-1)+M(1)+M(n-1) = 2M(n-1)+1
+$$
+
+Similarly if you unwind the $M(n-1)$ and so on, then $M(n) = 2^{n-1}+(2^{n-1}-1) = 2^{n-1}$
+
 <iframe width="1080" height="600" src="https://www.youtube.com/embed/L1SPxZvjpoM?start=626" title="W2L3_Calculating Complexity - Examples" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
