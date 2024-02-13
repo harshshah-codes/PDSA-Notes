@@ -10,7 +10,7 @@
 
 ### Code
 
-```python lineums="1" filename="SelectionSort.py"
+```python linenums="1"
 def SelectionSort(L):
     n = len(L)
     if n < 1:
@@ -52,7 +52,7 @@ def SelectionSort(L):
 
 ### Code
 
-```python lineums="1" filename="InsertionSort.py"
+```python lineums="1"
 def InsertionSort(L):
     n = len(L)
     if L < 1:
