@@ -1,4 +1,5 @@
 # PDSA Notes
+
 ## For IITM BS Degree
 
 ### Important Links for the course
@@ -10,3 +11,8 @@
 - [Grading Document](https://docs.google.com/document/u/4/d/e/2PACX-1vS1E5wtvnzC3dimgggIynsS0f2nmkMO18kFyOPSjmGjY4WARLAQjvBQDpOPekgyA0rLA_Ot-_g773cW/pub)
 
 - [Reference Books](https://drive.google.com/drive/folders/16bHPJRlBXNGTl6_YAnFK1q0O4umAHkGI?usp=sharing)
+
+!!! bug Note
+
+    If you find a formatting issue in displaying math equations, kindly refresh the page. This is a bug and I am working on it.
+    Hope to remove it soon.
