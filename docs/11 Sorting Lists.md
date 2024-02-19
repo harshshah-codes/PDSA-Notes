@@ -52,7 +52,7 @@ def SelectionSort(L):
 
 ### Code
 
-```python lineums="1"
+```python linenums="1"
 def InsertionSort(L):
     n = len(L)
     if L < 1:
@@ -88,7 +88,7 @@ def InsertionSort(L):
 
 ### Code
 
-```python linenums="1"
+``` python linenums="1"
 def merge(A, B):
     m, n = len(A), len(B)
     C, i, j, k = [], 0, 0, 0
