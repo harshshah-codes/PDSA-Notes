@@ -15,4 +15,4 @@ We can achieve the solution in two ways.
 4. Repeat steps (3) and (4) for all the unvisited vertices.
 
 ### Visual Representation
-<iframe src="https://visualgo.net/en/sssp" frameborder="0" height="700px" allowfullscreen="true"> </iframe>
+<iframe src="https://visualgo.net/en/sssp" frameborder="0" height="700px" width="650px" allowfullscreen="true"> </iframe>
