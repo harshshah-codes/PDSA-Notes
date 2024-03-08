@@ -37,14 +37,84 @@ Now to create or find a **minimum cost spanning tree**, there are two algorithms
 6. Now add $v_2$ in $TV$ and $t$ in $TE.$
 7. Repeat steps $5$ and $6$ for $n-2$ times
 
-<!-- ### Implementation
-#### Using Adjacency List
+### Implementation
+#### Basic Implementation
 ```python linenums="1"
 def Primsalgorithm(adjList):
-    visited, edges = {k: False for k i }, {}
+    visited = {k: False for k in adjList}
+    distance = {k: float('inf') for k in adjList}
     tree = []
 
-    min_weight = min(adj)
+    visited[0] = True
+
+    for vertex, dist in adjList[0]:
+        distance[vertex] = dist
+
+    for i in adjList:
+        mindist = float('inf')
+        nextv = None
+
+        for ver, dist in adjList[i]:
+            if (visited[i]) and (not visited[ver]) and (dist < mindist):
+                mindist = dist
+                nexte = (i, ver)
+                nextv = ver
+
+        if not nextv:
+            break
+
+        visited[nextv] = True
+        tree.append(nexte) 
+
+        for ver, dist in adjList[nextv]:
+            if not visited[ver]:
+                distance[ver] = min(distance[ver], dist)
+
+    return tree
 ```
 
-## Kruskal's Algorithm -->
+#### A Better Approach
+```python linenums="1"
+def Primsalgorithm(adjList):
+    visited, distance = {}, {}
+    neighbour = {}
+    
+    for k in adjList:
+        visited[k] = False
+        distance[k] = float('inf')
+        neighbour[k] = -1
+
+    visited[0] = True
+    for ver, dis in adjList[0]:
+        distance[ver] = dis
+        neighbour[ver] = 0
+
+    for i in range(1, len(adjList)):
+        nextd = min([distance[v] for v in adjList if not visited[v]])
+
+        next_vertex_list = [v for v in adjList if (not visited[v]) and (nextd == distance[v])]
+
+        if not next_vertex_list:
+            break
+
+        next_vertex = min(next_vertex_list)
+        visited[next_vertex] = True
+
+        for ver, dis in adjList[next_vertex]:
+            if not visited[ver]:
+                distance[ver] = min(distance[ver], dis)
+                neighbour[ver] = next_vertex
+
+    return neighbour
+```
+
+### Time Complexity
+#### Basic Implementation
+The time complexity of the [basic implementation](#basic-implementation) is $O(n^3)$
+
+#### Approach inspired by Djikstra's Algorithm
+The [second approach](#a-better-approach) is inspired by the [Djikstra's Algorithm](./02-Single%20Source%20Shortest%20Path/#djikstras-algorithm). 
+
+This implementation has the time complexity of $O(n^2)$ similar to that of **Djikstra's Algorithm**
+
+## Kruskal's Algorithm
