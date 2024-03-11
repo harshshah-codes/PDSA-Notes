@@ -118,3 +118,58 @@ The [second approach](#a-better-approach) is inspired by the [Djikstra's Algorit
 This implementation has the time complexity of $O(n^2)$ similar to that of **Djikstra's Algorithm**
 
 ## Kruskal's Algorithm
+### Algortihm
+1. Consider $n$ component, i.e., $n$ vertices.
+2. After ordering the edges in ascending order, pick the smallest edge and add it in the tree, if it does not forms a cycle.
+3. Repeat steps $1$ and $2$ untill you found $n-1$ edge.
+
+### Implementation
+#### Naive Implementation
+```python linenums="1"
+def KruskalsAlgorithm(adjList):
+    components = {k: k for k in adjList}
+    tree = []
+    edges = []
+    for i in adjList:
+        for ver, dis in adjList[i]:
+            edges.extend([(i, ver, dis)])
+
+    edges = list(sorted(edges, key=lambda edge: edge[2]))
+
+    for source, dest, dis in edges:
+        if component[source] != component[dest]:
+            tree.append((source, dest))
+            c = component[source]
+            for v in adjList:
+                if component[v] == c:
+                    component[v] = component[dest]
+```
+
+#### Using [UnionFind Data Structure](../Week-6/01%20Union%20Find%20Data%20Structure.md)
+Assume `UnionFind` has be defined in the code written below:
+
+```python linenums="1"
+def KruskalsAlgorithm(adjList):
+    components = UnionFind()
+    components.MakeUnionFind(adjList.keys())
+    tree = []
+    edges = []
+    for i in adjList:
+        for ver, dis in adjList[i]:
+            edges.extend([(i, ver, dis)])
+
+    edges = list(sorted(edges, key=lambda edge: edge[2]))
+
+    for source, dest, dis in edges:
+        if component.find(source) != component.find(dest):
+            tree.append((source, dest))
+            component.union(component.find(source), component.find(dest))
+```
+
+
+### Time Complexity
+#### [Basic Implementation](#naive-implementation)
+The current implementation has the time complexity of $O(n^2)$
+
+#### [Using Union Find Data Structure](#using-unionfind-data-structure)
+The overall time complexity is $O((m+n)\log(n)), $ where $m$ is the number of edges which is atmost $n^2$ so time complexity becomes $O(n \log (n))$
