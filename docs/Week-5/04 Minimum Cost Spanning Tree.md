@@ -127,7 +127,7 @@ This implementation has the time complexity of $O(n^2)$ similar to that of **Dji
 #### Naive Implementation
 ```python linenums="1"
 def KruskalsAlgorithm(adjList):
-    components = {k: k for k in adjList}
+    component = {k: k for k in adjList}
     tree = []
     edges = []
     for i in adjList:
